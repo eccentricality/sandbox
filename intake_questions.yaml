@@ -1,0 +1,79 @@
+# 01_intake_questions.yaml
+
+version: 1
+intake:
+  quick_triage:
+    - id: world
+      ask: "Which world are you currently progressing/pushing?"
+      type: choice
+      options: ["W1", "W2", "W3", "W4", "W5", "W6", "W7+", "Not sure"]
+    - id: goal
+      ask: "What do you want most right now?"
+      type: choice
+      options:
+        - "Push to next world"
+        - "More damage"
+        - "More accuracy"
+        - "More money"
+        - "Faster materials"
+        - "Better daily routine"
+        - "Fix a specific system (alchemy/stamps/etc.)"
+    - id: bottleneck
+      ask: "What is stopping you right now?"
+      type: choice
+      options: ["Damage", "Accuracy", "Survivability", "Money", "Materials", "Time/Overwhelm", "Not sure"]
+    - id: main_class
+      ask: "Who is your main pusher class?"
+      type: short_text
+      examples: ["Divine Knight", "Blood Berserker", "Beast Master", "Siege Breaker", "Other/Not sure"]
+
+  system_presence:
+    ask_style: "Answer Y/N or a rough level (e.g., 'Alchemy: Y, low')."
+    fields:
+      - "Alchemy"
+      - "Stamps"
+      - "Post Office"
+      - "Talents (star talents)"
+      - "Cards"
+      - "Star Signs"
+      - "Construction"
+      - "Worship"
+      - "Cooking"
+      - "Lab"
+      - "Breeding"
+      - "Divinity"
+      - "Sailing"
+      - "Gaming"
+      - "Rift"
+      - "Sneaking"
+      - "Other (user can name it)"
+
+  focused_followups:
+    PUSH_WORLD:
+      - "What map/zone are you stuck on (name or describe the enemies)?"
+      - "Is it mainly accuracy or damage? (pick one)"
+      - "What’s your typical AFK time per day? (0–1h / 1–3h / 3–6h / 6h+)"
+    DAMAGE:
+      - "Do you feel damage is low on all chars or only the main pusher?"
+      - "Do you have a consistent daily routine? (yes/no)"
+      - "Name 1–2 systems you’ve neglected most."
+    ACCURACY:
+      - "Is the hit chance low on your current map? (yes/no)"
+      - "Do you know your hit chance % roughly? (e.g., 40%, 70%)"
+    MONEY:
+      - "Is money the bottleneck for upgrades or for purchases?"
+      - "Do you have an active farming character? (yes/no)"
+    SYSTEM_FOCUS:
+      - "Which system exactly?"
+      - "What’s your current level/unlocks (rough)?"
+      - "What’s the outcome you want from this system (damage/money/materials/etc.)"
+
+output_preferences:
+  - id: verbosity
+    ask: "Do you want short answers or detailed plans?"
+    type: choice
+    options: ["Short", "Detailed"]
+  - id: style
+    ask: "Do you prefer a strict checklist or explanations?"
+    type: choice
+    options: ["Checklist", "Explain + checklist"]
